@@ -18,7 +18,10 @@ export default {
     const index = Math.floor(Math.random() * fortunes.length);   // ← 同じ
     const result = fortunes[index];                              // ← 同じ
     return new Response(JSON.stringify(result), {
-      headers: { "Content-Type": "application/json; charset=utf-8" },
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+      },
     });
   },
 };
